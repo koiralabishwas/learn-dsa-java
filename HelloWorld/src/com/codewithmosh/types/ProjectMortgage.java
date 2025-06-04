@@ -1,9 +1,10 @@
-package com.codewithmosh;
+package com.codewithmosh.types;
 
 import java.util.Scanner;
 
 public class ProjectMortgage {
   public static void main(String[] args) {
+    // 間違っているけど、めんどいからいいや  
     Scanner scanner = new Scanner(System.in);
 
     

@@ -1,4 +1,4 @@
-package com.codewithmosh;
+package com.codewithmosh.types;
 
 public class ArithmeticExpressions {
 

@@ -1,4 +1,4 @@
-package com.codewithmosh;
+package com.codewithmosh.types;
 
 import java.util.Arrays;
 
