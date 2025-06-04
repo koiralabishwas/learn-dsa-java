@@ -16,5 +16,11 @@ public class PrimitiveReference {
     Point point2 = point1; // it is pointing memmory address of point1
     point1.x = 5;
     System.err.println(point2); // returns x = 5
+
+    // constants 
+    final float pi = 3.14F; // need to add f in float
+
+
+    
   }
 }
