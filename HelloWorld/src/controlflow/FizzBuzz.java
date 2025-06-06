@@ -8,6 +8,7 @@ public class FizzBuzz {
     System.out.print("Input : ");
     int input = scanner.nextInt();
     System.out.println(fizzByzz(input));
+    scanner.close();
 
   }
 
@@ -36,5 +37,6 @@ public class FizzBuzz {
     }
 
     return String.valueOf(i);
+    
   }
 }
