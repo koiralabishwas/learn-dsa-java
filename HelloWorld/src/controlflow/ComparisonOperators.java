@@ -1,4 +1,4 @@
-package com.codewithmosh.controlflow;
+package controlflow;
 
 import java.util.Scanner;
 

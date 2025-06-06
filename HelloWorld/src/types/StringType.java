@@ -1,4 +1,4 @@
-package com.codewithmosh.types;
+package types;
 
 public class StringType {
   public static void main(String[] args) {
