@@ -1,4 +1,4 @@
-package types;
+package basic.types;
 
 public class TypeCastiong {
   public static void main(String[] args) {

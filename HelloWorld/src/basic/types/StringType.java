@@ -1,4 +1,4 @@
-package types;
+package basic.types;
 
 public class StringType {
   public static void main(String[] args) {
