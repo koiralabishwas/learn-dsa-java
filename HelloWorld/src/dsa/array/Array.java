@@ -114,10 +114,11 @@ public class Array {
 
         resizeIfRequired();
 
+        // 後ろから 与えられた index につくまえまで　一個みぎにずらしていれている
         for (int i = count - 1 ; i >= index ; i --) {
             this.array[i + 1] = array[i];
         }
-        array[index] = item;
+        array[index] = item; // index についたら、そこに itemいれたら、それ以前のものはいじらなくて良い
         count ++;
     }
 
