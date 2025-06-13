@@ -1,12 +1,14 @@
 package dsa.linkedList;
 
+import java.util.NoSuchElementException;
+
 public class LinkedList {
     private Node first;
     private Node last;
 
     private class Node {
         private int value;
-        private Node next; 
+        private Node next;
 
         Node(int value) {
             this.value = value;
@@ -15,8 +17,8 @@ public class LinkedList {
     }
 
     public void addLast(int item) {
-        var node = new Node(item) ;
-        
+        var node = new Node(item);
+
         if (isEmpty()) {
             this.first = node;
             this.last = node;
@@ -37,6 +39,24 @@ public class LinkedList {
         }
     }
 
+    public void removeFirst() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+
+        // if it has only one element
+        if (first == last) {
+            first = last = null;
+            // now it will have zero items
+        }
+
+        Node second = this.first.next;
+        this.first.next = null; // delete the pointer reference to prevent memmory leak.
+        this.first = second;
+
+
+    }
+
     public int indexOf(int item) {
         int index = 0;
         var current = this.first;
@@ -44,8 +64,8 @@ public class LinkedList {
             if (current.value == item) {
                 return index;
             }
-            current = current.next; 
-            index ++ ;
+            current = current.next;
+            index++;
         }
         return -1;
     }
