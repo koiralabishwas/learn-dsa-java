@@ -8,5 +8,6 @@ public class Main {
       list.addLast(10);
       list.addLast(15);
       System.out.println(list.indexOf(0));
+      System.out.println(list.contains(1));
     }
 }
