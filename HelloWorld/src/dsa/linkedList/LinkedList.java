@@ -47,6 +47,7 @@ public class LinkedList {
         // if it has only one element
         if (first == last) {
             first = last = null;
+            return;
             // now it will have zero items
         }
 
