@@ -59,6 +59,18 @@ public class LinkedList {
         size--;
     }
 
+    public int[] toArray() {
+        int[] arr = new int[this.size];
+        var node = this.first;
+        int counter = 0;
+        while (node != null) {
+            arr[counter] = node.value;
+            node = node.next;
+            counter ++;
+        }
+        return arr;
+    }
+
     public void removeLast() {
         if (isEmpty()) {
             throw new NoSuchElementException();
