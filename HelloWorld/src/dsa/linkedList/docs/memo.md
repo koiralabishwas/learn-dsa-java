@@ -23,3 +23,15 @@
 ![alt text](image-5.png)
 - O(n)
 - middle => need to go throuth the link . find the one to delete , point one before to one next , then the middle one will be removed 
+
+
+## Array vs LinkedList
+![alt text](image-6.png)
+![alt text](image-7.png)
+
+## Types of linked List 
+![alt text](image-8.png)
+
+both can be circular
+- can be used to looop songs in a playlist
+![alt text](image-9.png)
