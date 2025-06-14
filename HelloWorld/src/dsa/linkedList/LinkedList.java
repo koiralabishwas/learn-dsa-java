@@ -5,6 +5,7 @@ import java.util.NoSuchElementException;
 public class LinkedList {
     private Node first;
     private Node last;
+    private int size;
 
     private class Node {
         private int value;
@@ -26,6 +27,7 @@ public class LinkedList {
             last.next = node;
             last = node;
         }
+        size++;
     }
 
     public void addFirst(int item) {
@@ -37,6 +39,7 @@ public class LinkedList {
             node.next = this.first;
             this.first = node;
         }
+        size++;
     }
 
     public void removeFirst() {
@@ -47,13 +50,13 @@ public class LinkedList {
         // if it has only one element
         if (first == last) {
             first = last = null;
-            return;
             // now it will have zero items
+        } else {
+            Node second = this.first.next;
+            this.first.next = null; // delete the pointer reference to prevent memmory leak.
+            this.first = second;
         }
-
-        Node second = this.first.next;
-        this.first.next = null; // delete the pointer reference to prevent memmory leak.
-        this.first = second;
+        size--;
     }
 
     public void removeLast() {
@@ -63,14 +66,25 @@ public class LinkedList {
 
         if (first == last) {
             first = last = null;
-            return ;
+
+        } else {
+            Node secondLast = getPrevious();
+            secondLast.next = null;
+            this.last = secondLast;
         }
-        Node secondLast = this.first ;
+        size--;
+    }
+
+    private Node getPrevious() {
+        Node secondLast = this.first;
         while (secondLast.next != this.last) {
             secondLast = secondLast.next;
         }
-        secondLast.next = null;
-        this.last = secondLast; 
+        return secondLast;
+    }
+
+    public int size() {
+        return this.size;
     }
 
     public int indexOf(int item) {

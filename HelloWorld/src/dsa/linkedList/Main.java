@@ -5,9 +5,11 @@ public class Main {
       LinkedList list = new LinkedList();
       list.addLast(1);
       list.addLast(22);
+      list.addLast(22);
 
       list.removeLast();
       System.out.println(list.contains(22));
+      System.out.println(list.size());
       
     
     }
