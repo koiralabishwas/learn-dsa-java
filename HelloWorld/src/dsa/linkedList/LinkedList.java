@@ -54,8 +54,23 @@ public class LinkedList {
         Node second = this.first.next;
         this.first.next = null; // delete the pointer reference to prevent memmory leak.
         this.first = second;
+    }
 
+    public void removeLast() {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
 
+        if (first == last) {
+            first = last = null;
+            return ;
+        }
+        Node secondLast = this.first ;
+        while (secondLast.next != this.last) {
+            secondLast = secondLast.next;
+        }
+        secondLast.next = null;
+        this.last = secondLast; 
     }
 
     public int indexOf(int item) {
@@ -72,6 +87,9 @@ public class LinkedList {
     }
 
     public boolean contains(int item) {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
         return indexOf(item) != -1;
     }
 
