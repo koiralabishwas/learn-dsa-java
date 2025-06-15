@@ -71,6 +71,21 @@ public class LinkedList {
         return arr;
     }
 
+    public void reverse() {
+        // TODO: do this again
+        Node previous = first;
+        Node current = previous.next;
+        while (current != null) {
+            var next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        this.last = first;
+        this.last.next = null;
+        this.first = previous;
+    }
+
     public void removeLast() {
         if (isEmpty()) {
             throw new NoSuchElementException();

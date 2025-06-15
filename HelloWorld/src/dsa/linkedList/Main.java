@@ -7,7 +7,9 @@ public class Main {
       LinkedList list = new LinkedList();
       list.addLast(1);
       list.addLast(22);
-      list.addLast(22);
+      list.addLast(10);
+      list.addLast(15);
+      list.reverse();
 
       // list.removeLast();
       int[] arr = list.toArray();
