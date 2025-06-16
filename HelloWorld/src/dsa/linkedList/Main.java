@@ -9,7 +9,7 @@ public class Main {
       list.addLast(22);
       list.addLast(10);
       list.addLast(15);
-      list.reverse();
+      list.rereverse();
 
       // list.removeLast();
       int[] arr = list.toArray();
