@@ -9,14 +9,9 @@ public class Main {
       list.addLast(22);
       list.addLast(10);
       list.addLast(15);
-      list.rereverse();
+      list.reverse();
+      System.out.println(Arrays.toString(list.toArray()));
 
-      // list.removeLast();
-      int[] arr = list.toArray();
-      System.out.println(list.contains(22));
-      System.out.println(list.size());
-      System.out.println(Arrays.toString(arr));
-      
-    
+      // System.out.println(list.getKthFromTheEnd(4));
     }
 }

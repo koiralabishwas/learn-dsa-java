@@ -72,22 +72,73 @@ public class LinkedList {
     }
 
 
-    public void rereverse() {
-        // TODO: do this again
-        Node previous = this.first;
-        Node current = previous.next;
+    // public void reverse() {
+    //     // TODO: do this again
+    //     Node previous = this.first;
+    //     Node current = previous.next;
 
+    //     while (current != null) {
+    //         Node next = current.next;
+    //         current.next = previous;
+    //         previous = current;
+    //         current = next ;
+    //     }
+    //     this.last = this.first;
+    //     this.last.next = null;
+    //     this.first = previous;
+
+    // }
+
+    public void rereverse() {
+        Node previous = null;
+        Node current = this.first;
         while (current != null) {
             Node next = current.next;
             current.next = previous;
             previous = current;
-            current = next ;
+            current = next;
         }
-        this.last = first;
-        this.last.next = null;
+        this.last = this.first;
+        // System.out.println(this.last.next);
         this.first = previous;
-
     }
+
+    public void reverse() {
+        Node previous = null;
+        Node current = this.first;
+        
+        while (current != null) {
+            Node next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        this.last = this.first;
+        System.err.println(this.last.next);
+        this.first = previous;
+    }
+
+    public int getKthFromTheEnd(int k) {
+        // TODO: do again
+        if (isEmpty()) {
+            throw new IllegalStateException();
+        }
+
+        var a = this.first;
+        var b = this.first;
+        for (int i = 0 ; i < k -1 ; i ++) {
+            b = b.next;
+            if (b==null) {
+                throw new IllegalArgumentException();
+            }
+        }
+        while (b  != this.last) {
+            a = a.next;
+            b = b.next;
+        }
+        return a.value;
+    }
+
     public void removeLast() {
         if (isEmpty()) {
             throw new NoSuchElementException();
