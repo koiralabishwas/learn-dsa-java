@@ -71,51 +71,18 @@ public class LinkedList {
         return arr;
     }
 
-
-    // public void reverse() {
-    //     // TODO: do this again
-    //     Node previous = this.first;
-    //     Node current = previous.next;
-
-    //     while (current != null) {
-    //         Node next = current.next;
-    //         current.next = previous;
-    //         previous = current;
-    //         current = next ;
-    //     }
-    //     this.last = this.first;
-    //     this.last.next = null;
-    //     this.first = previous;
-
-    // }
-
-    public void rereverse() {
-        Node previous = null;
-        Node current = this.first;
-        while (current != null) {
-            Node next = current.next;
-            current.next = previous;
-            previous = current;
-            current = next;
-        }
-        this.last = this.first;
-        // System.out.println(this.last.next);
-        this.first = previous;
-    }
-
     public void reverse() {
         Node previous = null;
         Node current = this.first;
-        
         while (current != null) {
             Node next = current.next;
             current.next = previous;
             previous = current;
             current = next;
         }
+        
         this.last = this.first;
-        System.err.println(this.last.next);
-        this.first = previous;
+        this.first = previous; // current が最後nullになっているから！！;
     }
 
     public int getKthFromTheEnd(int k) {
