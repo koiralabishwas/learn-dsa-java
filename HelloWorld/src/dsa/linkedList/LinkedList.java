@@ -86,24 +86,40 @@ public class LinkedList {
     }
 
     public int getKthFromTheEnd(int k) {
-        // TODO: do again
         if (isEmpty()) {
             throw new IllegalStateException();
         }
+        Node firstP = this.first;
+        Node secondP = firstP;
 
-        var a = this.first;
-        var b = this.first;
-        for (int i = 0 ; i < k -1 ; i ++) {
-            b = b.next;
-            if (b==null) {
+        // to find the kth node we need distance of k-1 between two node pointers
+        for(int i = 0 ; i < k - 1 ; i ++) {
+            secondP = secondP.next;
+            if (secondP == null) {
                 throw new IllegalArgumentException();
             }
         }
-        while (b  != this.last) {
-            a = a.next;
-            b = b.next;
+
+        while(secondP.next != null) {
+            firstP = firstP.next;
+            secondP = secondP.next;
         }
-        return a.value;
+
+        return firstP.value;
+    }
+
+    public int printMiddle() {
+        if (isEmpty()) throw new IllegalStateException();
+
+        Node firstP = this.first;
+        Node secondP = this.first;
+
+        while (secondP != null) {
+            firstP = firstP.next;
+            secondP = secondP.next.next;
+        }
+
+        return firstP.value;
     }
 
     public void removeLast() {
