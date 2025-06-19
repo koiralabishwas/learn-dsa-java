@@ -2,6 +2,8 @@ package dsa.linkedList;
 
 import java.util.NoSuchElementException;
 
+import basic.types.Array;
+
 public class LinkedList {
     private Node first;
     private Node last;
@@ -72,6 +74,7 @@ public class LinkedList {
     }
 
     public void reverse() {
+        // TODO:redo
         Node previous = null;
         Node current = this.first;
         while (current != null) {
@@ -86,6 +89,7 @@ public class LinkedList {
     }
 
     public int getKthFromTheEnd(int k) {
+        // TODO:redo
         if (isEmpty()) {
             throw new IllegalStateException();
         }
@@ -108,18 +112,20 @@ public class LinkedList {
         return firstP.value;
     }
 
-    public int printMiddle() {
+    public int[] printMiddle() {
         if (isEmpty()) throw new IllegalStateException();
 
         Node firstP = this.first;
         Node secondP = this.first;
 
-        while (secondP != null) {
+        while (secondP != this.last && secondP.next != this.last) {
             firstP = firstP.next;
             secondP = secondP.next.next;
         }
 
-        return firstP.value;
+        if ( secondP == last) return (new int[] {firstP.value});
+
+        return new int[] {firstP.value , firstP.next.value};
     }
 
     public void removeLast() {

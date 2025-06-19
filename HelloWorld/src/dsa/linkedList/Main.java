@@ -9,10 +9,8 @@ public class Main {
       list.addLast(22);
       list.addLast(10);
       list.addLast(15);
-      System.out.println(Arrays.toString(list.toArray()));
-      // list.reverse();
-      System.out.println(Arrays.toString(list.toArray()));
-      System.out.println(list.getKthFromTheEnd(4));
+      list.addLast(15);
+      System.out.println(Arrays.toString(list.printMiddle()));
 
       // System.out.println(list.getKthFromTheEnd(4));
     }
