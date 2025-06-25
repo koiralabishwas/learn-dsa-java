@@ -7,3 +7,6 @@
 
 - [ ] Stack 
   - [ ] check syntax problem redo it
+  - [ ] refactor stack for better performance in stack.Stack.java
+  - [ ] do TwoStack 
+  - [ ] do minStack
