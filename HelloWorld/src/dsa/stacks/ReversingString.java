@@ -2,7 +2,6 @@ package dsa.stacks;
 
 import java.util.Stack;
 
-import dsa.ans.StringReverser;
 
 public class ReversingString {
 
@@ -29,7 +28,7 @@ public class ReversingString {
     }
     public static void main(String[] args) {
        String str = "abcd";
-       StringReverser reverser = new StringReverser();
+       ReversingString reverser = new ReversingString();
        var result = reverser.reverse(str);
        System.out.println(result);
 
