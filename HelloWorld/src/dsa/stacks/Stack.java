@@ -5,36 +5,22 @@ import java.util.Arrays;
 public class Stack {
     // is this too dynamic and consumes too much memmory ??
 
-    int[] stack  = new int[0];
+    int[] stack  = new int[5];
 
     int count = 0;
 
     void push (int item) {
-        int newCount = count + 1;
-        int[] newStack = new int[newCount];
-        for (int i = 0; i < count; i++) {
-            newStack[i] = stack[i];
+        if ( count == stack.length) {
+            throw new StackOverflowError();
         }
-        newStack[newCount - 1] = item;
-        count = newCount;
-        stack = newStack;
+        stack[count++] = item;
     }
 
     int pop() {
-        if (isEmpty()) {
-            throw new StackOverflowError("stack is empty to pop");
+        if ( count == 0) {
+            throw new IllegalStateException();
         }
-        int top = stack[count - 1]; // 最後に返す
-
-        int newCount = count -1;
-        int[] newStack = new int[newCount];
-        for (int i = 0; i < newCount; i++) {
-            newStack[i] = this.stack[i];
-        }
-        stack = newStack;
-        count = newCount;
-
-        return top;
+        return stack[-- count];
     }
 
     int peek() {
@@ -61,6 +47,7 @@ public class Stack {
         stack.push(5);
         stack.push(5);
         stack.push(7);
+        stack.push(30);
         System.out.println(stack.toString());
         var top = stack.pop();
         var topPeek = stack.peek();
@@ -73,7 +60,7 @@ public class Stack {
         stack.pop();
         stack.pop();
         stack.pop();
-        // stack.pop();
+        stack.pop();
 
         System.out.println(stack.isEmpty());
 
