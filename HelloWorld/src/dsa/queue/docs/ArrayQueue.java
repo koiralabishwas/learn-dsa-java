@@ -23,7 +23,6 @@ public class ArrayQueue {
     }
 
     public int dequeue() {
-        count --;
         var item =  items[front];
         items[front] = 0;
         front = (front + 1 ) % items.length;
