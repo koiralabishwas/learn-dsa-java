@@ -5,3 +5,7 @@ works like a real life waiting line
 ![alt text](image.png)
 
 ![alt text](image-1.png)
+
+# Priority Queues
+object are processed based on priorities . Not the order added . ex => prirority mail ordering ?
+![alt text](image-2.png)
