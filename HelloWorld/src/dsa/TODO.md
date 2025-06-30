@@ -1,12 +1,1 @@
--　[ ] Linked List
-  - [ ] 20> linked list exercises
-  - [ ] everse linked list
-  - [ ] Kth node from the end
-  - [ ] linklist.hasloop()
-  - [ ] linklist.findmiddle()
-
-- [ ] Stack 
-  - [ ] check syntax problem redo it
-  - [ ] refactor stack for better performance in stack.Stack.java
-  - [ ] do TwoStack 
-  - [ ] do minStack
+- [ ] Redo all DSA 1 exercises

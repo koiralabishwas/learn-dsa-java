@@ -1,4 +1,4 @@
-package dsa.queue.docs;
+package dsa.queue;
 
 import java.util.ArrayDeque;
 import java.util.Queue;
