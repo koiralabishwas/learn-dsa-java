@@ -10,3 +10,9 @@
 ![alt text](image-3.png)
 - as the hash function returns same value..
 ![alt text](image-4.png)
+
+
+## hash functions
+ - a function that takes a value and maps it to different kind of value which we call a hash value/hash hode / hash / digest . 
+ -  
+

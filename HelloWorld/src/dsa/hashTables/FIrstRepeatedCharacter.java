@@ -14,7 +14,7 @@ public class FIrstRepeatedCharacter {
             } 
             set.add(ch);
         }
-        throw new IllegalStateException();
+        return Character.MIN_VALUE;
     }
 
     public static void main(String[] args) {
