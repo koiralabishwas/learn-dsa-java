@@ -2,8 +2,6 @@ package dsa.linkedList;
 
 import java.util.NoSuchElementException;
 
-import basic.types.Array;
-
 public class LinkedList {
     private Node first;
     private Node last;

@@ -15,29 +15,56 @@ public class HashTable {
     }
 
     public void put(int k, String v) {
-        var index = this.hash(k);
-        if (entries[index] == null) {
-            entries[index] = new LinkedList<>();
-        }
+        var bucket = getBucket(k);
 
-        var bucket = entries[index];
-
-
-        for(var entry : bucket) {
+        for (var entry : bucket) {
             if (entry.k == k) {
                 entry.v = v;
                 return;
             }
         }
-        
+
         var entry = new Entry();
         entry.k = k;
         entry.v = v;
         bucket.addLast(entry);
     }
 
+    public String get(int k) {
+        var entry = getEntry(k);
+
+        return (entry == null) ? null : entry.v;
+    }
+
+    public Entry remove(int k) {
+        var entry = this.getEntry(k);
+        if (entry == null) {
+            throw new IllegalStateException();
+        }
+        getBucket(k).remove(entry);
+        throw new IllegalStateException();
+    }
+
+    private LinkedList<Entry> getBucket(int key) {
+        return entries[hash(key)];
+    }
+
+    private Entry getEntry(int key) {
+        var bucket = getBucket(key);
+        if (bucket != null) {
+            for (var entry : bucket) {
+                if (entry.k == key) {
+                    return entry;
+                }
+            }
+        }
+        return null;
+    }
+
     public static void main(String[] args) {
         var hashTable = new HashTable();
-        System.out.println(hashTable.entries.length);
+        hashTable.put(3, "three");
+        hashTable.remove(3);
+        System.out.println("done");
     }
 }
