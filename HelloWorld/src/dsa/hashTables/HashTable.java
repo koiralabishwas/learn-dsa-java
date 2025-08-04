@@ -15,18 +15,15 @@ public class HashTable {
     }
 
     public void put(int k, String v) {
-        var bucket = getBucket(k);
-
-        for (var entry : bucket) {
-            if (entry.k == k) {
-                entry.v = v;
-                return;
-            }
+        var entry = getEntry(k);
+        if (entry != null) {
+            entry.v = v;
+            return;
         }
-
-        var entry = new Entry();
         entry.k = k;
         entry.v = v;
+        
+        var bucket = getOrCreateBucket(k);
         bucket.addLast(entry);
     }
 
@@ -49,6 +46,15 @@ public class HashTable {
         return entries[hash(key)];
     }
 
+    private LinkedList<Entry> getOrCreateBucket(int key) {
+        var index = hash(key);
+        var bucket = entries[index];
+        if (bucket == null) {
+            entries[index] = new LinkedList<>();
+        }
+        return bucket;
+    }
+    
     private Entry getEntry(int key) {
         var bucket = getBucket(key);
         if (bucket != null) {
