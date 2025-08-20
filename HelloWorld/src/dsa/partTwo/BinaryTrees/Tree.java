@@ -65,6 +65,42 @@ public class Tree {
         return false;
     }
 
+    public void traversePreOrder(){
+        this.traversePreOrder(root);
+    }
+    private void traversePreOrder(Node root) {
+        if (root == null) {
+            return;
+        }
+        // root (print)
+        System.out.println(root.value);
+        // left
+        traversePreOrder(root.leftChild);
+        // right
+        traversePreOrder(root.rightChild);
+    }
+
+
+    // implement traverseInOrder
+    public void traverseInOrder() {
+        this.traverseInOrder(this.root);
+    }  
+
+    private void traverseInOrder(Node root)  {
+        if (root == null) {
+            return;
+        }
+        
+    }
+
+    // implement postOrderTreversal
+        public void traversePostOrder() {
+        this.traversePostOrder(this.root);
+    }  
+
+    private void traversePostOrder(Node root)  {
+        
+    }
     public static void main(String[] args) {
         var tree = new Tree();
         tree.insert(7);
@@ -76,6 +112,6 @@ public class Tree {
         tree.insert(10);
         System.out.println(tree.find(4));
         System.out.println(tree.toString());
-
+        tree.traversePreOrder();
     }
 }
